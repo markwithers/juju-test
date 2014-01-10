@@ -11,8 +11,10 @@ var path = require('path');
 
 var app = express();
 
+var config = require('./config/config')
+
 // all environments
-app.set('port', process.env.PORT || 3000);
+app.set('port', config.listen_port);
 app.set('views', __dirname + '/views');
 app.set('view engine', 'jade');
 app.use(express.favicon());
